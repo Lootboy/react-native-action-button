@@ -168,14 +168,14 @@ export default class ActionButton extends Component {
           this.props.btnOutRange || this.props.buttonColor
         ]
       }),
-      width: this.props.size,
-      height: this.props.size,
+      width: this.props.width,
+      height: this.props.height,
       borderRadius: this.props.size / 2
     };
 
     const buttonStyle = {
-      width: this.props.size,
-      height: this.props.size,
+      width: this.props.width,
+      height: this.props.height,
       borderRadius: this.props.size / 2,
       alignItems: "center",
       justifyContent: "center"
@@ -188,7 +188,7 @@ export default class ActionButton extends Component {
           right: this.props.offsetX,
           zIndex: this.props.zIndex,
           borderRadius: this.props.size / 2,
-          width: this.props.size
+          width: this.props.width
         }
       : { marginHorizontal: this.props.offsetX, zIndex: this.props.zIndex };
 
@@ -370,6 +370,8 @@ ActionButton.propTypes = {
   offsetY: PropTypes.number,
   spacing: PropTypes.number,
   size: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
   autoInactive: PropTypes.bool,
   onPress: PropTypes.func,
   onPressIn: PropTypes.func,
@@ -409,6 +411,8 @@ ActionButton.defaultProps = {
   offsetX: 30,
   offsetY: 30,
   size: 56,
+  width: 56,
+  height: 56,
   verticalOrientation: "up",
   backgroundTappable: false,
   useNativeFeedback: true,
