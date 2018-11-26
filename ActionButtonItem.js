@@ -157,7 +157,7 @@ export default class ActionButtonItem extends Component {
       : hideLabelShadow;
 
     if (position !== "center") {
-      positionStyles[position] = textPosition === 'right ? 
+      positionStyles[position] = textPosition === 'right' ? 
         offsetX - (parentSize - size) / 2 - size - spaceBetween : offsetX + (parentSize - size) / 2 + size + spaceBetween;
     } else {
       positionStyles.right = WIDTH / 2 + size / 2 + spaceBetween;
