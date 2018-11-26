@@ -34,7 +34,8 @@ export default class ActionButtonItem extends Component {
       useNativeFeedback: true,
       activeOpacity: DEFAULT_ACTIVE_OPACITY,
       fixNativeFeedbackRadius: false,
-      nativeFeedbackRippleColor: "rgba(255,255,255,0.75)"
+      nativeFeedbackRippleColor: "rgba(255,255,255,0.75)",
+      textPosition: 'left',
     };
   }
 
@@ -44,7 +45,8 @@ export default class ActionButtonItem extends Component {
       useNativeFeedback: PropTypes.bool,
       fixNativeFeedbackRadius: PropTypes.bool,
       nativeFeedbackRippleColor: PropTypes.string,
-      activeOpacity: PropTypes.number
+      activeOpacity: PropTypes.number,
+      textPosition: PropTypes.string,
     };
   }
 
@@ -57,6 +59,7 @@ export default class ActionButtonItem extends Component {
       spacing,
       width,
       height,
+      textPosition,
     } = this.props;
 
     if (!this.props.active) return null;
@@ -144,7 +147,8 @@ export default class ActionButtonItem extends Component {
       position,
       height,
       width,
-      spaceBetween
+      spaceBetween,
+      textPosition
     } = this.props;
     const offsetTop = Math.max(height / 2 - TEXT_HEIGHT / 2, 0);
     const positionStyles = { top: offsetTop };
@@ -153,8 +157,8 @@ export default class ActionButtonItem extends Component {
       : hideLabelShadow;
 
     if (position !== "center") {
-      positionStyles[position] =
-        offsetX - (parentSize - size) / 2 - size - spaceBetween;
+      positionStyles[position] = textPosition === 'right ? 
+        offsetX - (parentSize - size) / 2 - size - spaceBetween : offsetX + (parentSize - size) / 2 + size + spaceBetween;
     } else {
       positionStyles.right = WIDTH / 2 + size / 2 + spaceBetween;
     }
