@@ -160,7 +160,7 @@ export default class ActionButtonItem extends Component {
       positionStyles[position] = textPosition === 'right' ? 
         offsetX - (parentSize - size) / 2 - size - spaceBetween : offsetX + (parentSize - size) / 2 + size + spaceBetween;
     } else {
-      positionStyles.right = WIDTH / 2 + size / 2 + spaceBetween;
+      positionStyles.right = textPosition === 'right' ? WIDTH / 2 - size / 2 - spaceBetween : WIDTH / 2 + size / 2 + spaceBetween;
     }
 
     const textStyles = [
