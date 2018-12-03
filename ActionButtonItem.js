@@ -155,13 +155,9 @@ export default class ActionButtonItem extends Component {
     const hideShadow = hideLabelShadow === undefined
       ? this.props.hideShadow
       : hideLabelShadow;
-
-    if (position !== "center") {
-      positionStyles[position] = textPosition === 'right' ? 
-        offsetX - (parentSize - size) / 2 - size - spaceBetween : offsetX + (parentSize - size) / 2 + size + spaceBetween;
-    } else {
-      positionStyles.right = textPosition === 'right' ? WIDTH / 2 - size / 2 - spaceBetween : WIDTH / 2 + size / 2 + spaceBetween;
-    }
+    
+    positionStyles[position] = textPosition === 'right' ? 
+      offsetX - (parentSize - size) / 2 - size - spaceBetween : offsetX + (parentSize - size) / 2 + size + spaceBetween;
 
     const textStyles = [
       styles.textContainer,
